@@ -5,8 +5,6 @@ Siege_Tank::Siege_Tank()
 	health = 400;
 	attack = 200;
 	cout << "Create Siege Tank" << endl;
-	cout << "Health : " << health << endl;
-	cout << "Attack : " << attack << endl;
 }
 
 Siege_Tank::~Siege_Tank()

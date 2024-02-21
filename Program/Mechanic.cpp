@@ -7,7 +7,7 @@ Mechanic::Mechanic()
 
 Mechanic::~Mechanic()
 {
-	cout << "Release Mechanic" << endl << endl;
+	cout << "Release Mechanic" << endl;
 }
 
 void Mechanic::Move()

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Factory.cpp" />
     <ClCompile Include="Goliath.cpp" />
     <ClCompile Include="Mechanic.cpp" />
     <ClCompile Include="Program.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Vulture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Factory.h" />
     <ClInclude Include="Goliath.h" />
     <ClInclude Include="Mechanic.h" />
     <ClInclude Include="Siege_Tank.h" />

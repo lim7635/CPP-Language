@@ -5,8 +5,6 @@ Goliath::Goliath()
 	health = 100;
 	attack = 50;
 	cout << "Create Goliath" << endl;
-	cout << "Health : " << health << endl;
-	cout << "Attack : " << attack << endl;
 }
 
 Goliath::~Goliath()
