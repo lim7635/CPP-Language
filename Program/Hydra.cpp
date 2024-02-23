@@ -21,12 +21,10 @@ void Hydra::Recovery()
 
 int Hydra::GetHP()
 {
-	this->health = health;
 	return health;
 }
 
 void Hydra::SetHP(int health)
 {
-	this->health = health;
-	cout << "Hydra 현재 체력 : " << this->health << endl;
+	cout << "Hydra 현재 체력 : " << health << endl;
 }

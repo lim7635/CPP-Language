@@ -12,15 +12,14 @@ Zerg::~Zerg()
 
 void Zerg::Recovery()
 {
-
+	cout << "Recovery Zerg" << endl;
 }
 
 int Zerg::GetHP()
 {
-	return health;
+	return 0;
 }
 
 void Zerg::SetHP(int health)
 {
-	this->health = health;
 }

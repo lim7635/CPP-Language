@@ -6,6 +6,6 @@ using namespace std;
 class Beacon
 {
 public:
-	void Trigger(Zerg * zerg);
+	void Trigger(Zerg & zerg);
 };
 

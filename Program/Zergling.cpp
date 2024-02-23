@@ -21,12 +21,10 @@ void Zergling::Recovery()
 
 int Zergling::GetHP()
 {
-	this->health = health;
 	return health;
 }
 
 void Zergling::SetHP(int health)
 {
-	this->health = health;
-	cout << "Zergling 현재 체력 : " << this->health << endl;
+	cout << "Zergling 현재 체력 : " << health << endl;
 }

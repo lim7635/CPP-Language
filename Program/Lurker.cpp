@@ -21,12 +21,10 @@ void Lurker::Recovery()
 
 int Lurker::GetHP()
 {
-	this->health = health;
 	return health;
 }
 
 void Lurker::SetHP(int health)
 {
-	this->health = health;
-	cout << "Lurker 현재 체력 : " << this->health << endl;
+	cout << "Lurker 현재 체력 : " << health << endl;
 }

@@ -1,6 +1,6 @@
 #include "Beacon.h"
 
-void Beacon::Trigger(Zerg * zerg)
+void Beacon::Trigger(Zerg & zerg)
 {
-	zerg->Recovery();
+	zerg.Recovery();
 }
