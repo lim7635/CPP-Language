@@ -25,7 +25,7 @@ int main()
 	//// push_back : Vector 컨테이너 뒤에 데이터 값을 넣어줍니다.
 	//// [10] [20] [30] [40] [50] [60] 
 	//vector.push_back(10);
-
+	// 
 	//cout << "vector.capacity : " << vector.capacity() << endl;
 
 	//vector.push_back(20);
@@ -57,28 +57,27 @@ int main()
 
 #pragma region Rhythm Game
 
-	int life = 5;
-
 	vector<const char*> vector;
 	vector.reserve(100);
 
 	srand(time(NULL));
+
 	int i = 0;
 	while (i < 10)
 	{
 		int count = rand() % 4;
 		switch (count)
 		{
-		case 0: vector.push_back("↑"); cout << vector[i] << " ";
+		case 0: vector.push_back("↑");
 			break;
 
-		case 1: vector.push_back("←"); cout << vector[i] << " ";
+		case 1: vector.push_back("←");
 			break;
 
-		case 2: vector.push_back("→"); cout << vector[i] << " ";
+		case 2: vector.push_back("→");
 			break;
 
-		case 3: vector.push_back("↓"); cout << vector[i] << " ";
+		case 3: vector.push_back("↓");
 			break;
 
 		default:
@@ -89,6 +88,11 @@ int main()
 
 	while (1)
 	{
+		for (int i = 0; i < vector.size(); i++)
+		{
+			cout << vector[i] << " ";
+		}
+		
 		char key = 0;
 
 		if (_kbhit())
@@ -103,23 +107,30 @@ int main()
 
 			switch (key)
 			{
-			case UP: if (vector.size())
+			case UP: if (vector[vector.size() - 1] == "↑") { vector.pop_back(); }
 				break;
 
-			case LEFT:
-
-				break;
-			case RIGHT:
-
+			case LEFT: if (vector[vector.size() - 1] == "←") { vector.pop_back(); }
 				break;
 
-			case DOWN:
+			case RIGHT: if (vector[vector.size() - 1] == "→") { vector.pop_back(); }
+				break;
+
+			case DOWN: if (vector[vector.size() - 1] == "↓") { vector.pop_back(); }
 				break;
 
 			default:
 				break;
 			}
 		}
+
+		if (vector.size() == 0)
+		{
+			cout << "CLEAR" << endl;
+			break;
+		}
+		Sleep(100);
+		system("cls");
 	}
 #pragma endregion
 
