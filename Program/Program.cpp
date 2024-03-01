@@ -15,7 +15,6 @@ int main()
 #pragma region 선형 컨테이너
 	// 데이터를 선형으로 저장하며 특별한 제약이나 규칙이 없는 일반적인 컨테이너입니다.
 
-
 #pragma region Vector
 
 	//std::vector<int> vector;
@@ -60,13 +59,13 @@ int main()
 	vector<const char*> vector;
 	vector.reserve(100);
 
-	srand(time(NULL));
-
 	int i = 0;
-	while (i < 10)
+	int count = 10;
+	srand(time(NULL));
+	while (i < count)
 	{
-		int count = rand() % 4;
-		switch (count)
+		int direction = rand() % 4;
+		switch (direction)
 		{
 		case 0: vector.push_back("↑");
 			break;
@@ -86,8 +85,17 @@ int main()
 		i++;
 	}
 
+	int life = 3;
 	while (1)
 	{
+		cout << "Life : ";
+		for (int i = 0; i < life; i++)
+		{
+			cout << "♥ ";
+		}
+		
+		cout << endl;
+		cout << endl;
 		for (int i = 0; i < vector.size(); i++)
 		{
 			cout << vector[i] << " ";
@@ -108,15 +116,19 @@ int main()
 			switch (key)
 			{
 			case UP: if (vector[vector.size() - 1] == "↑") { vector.pop_back(); }
+				     else { life--; }
 				break;
 
 			case LEFT: if (vector[vector.size() - 1] == "←") { vector.pop_back(); }
+					   else { life--; }
 				break;
 
 			case RIGHT: if (vector[vector.size() - 1] == "→") { vector.pop_back(); }
+					    else { life--; }
 				break;
 
 			case DOWN: if (vector[vector.size() - 1] == "↓") { vector.pop_back(); }
+					   else { life--; }
 				break;
 
 			default:
@@ -124,14 +136,21 @@ int main()
 			}
 		}
 
+		if (life == 0)
+		{
+			cout << "GAME OVER" << endl;
+			break;
+		}
+
 		if (vector.size() == 0)
 		{
-			cout << "CLEAR" << endl;
+			cout << "GAME CLEAR" << endl;
 			break;
 		}
 		Sleep(100);
 		system("cls");
 	}
+
 #pragma endregion
 
 
