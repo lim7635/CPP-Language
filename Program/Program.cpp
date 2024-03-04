@@ -1,161 +1,50 @@
 ﻿#include <iostream>
-#include <vector>
-#include <time.h>
-#include <conio.h>
-#include <Windows.h>
+#include <stack>
+#include <queue>
 using namespace std;
-
-#define UP 72
-#define LEFT 75
-#define RIGHT 77
-#define DOWN 80
 
 int main()
 {
-#pragma region 선형 컨테이너
-	// 데이터를 선형으로 저장하며 특별한 제약이나 규칙이 없는 일반적인 컨테이너입니다.
+#pragma region 컨테이너 어댑터
+	// 기존 컨테이너의 인터페이스를 제한하여
+	// 만든 기능이 제한되거나 변형된 컨테이너입니다.
 
-#pragma region Vector
+#pragma region Stack(LIFO) 선입후출
 
-	//std::vector<int> vector;
+	/*stack<int> stack;
 
-	//vector.reserve(10); // capacity 값 설정
+	stack.push(10);
+	stack.push(20);
+	stack.push(30);
+	stack.push(40);
+	stack.push(50);
 
-	//// push_back : Vector 컨테이너 뒤에 데이터 값을 넣어줍니다.
-	//// [10] [20] [30] [40] [50] [60] 
-	//vector.push_back(10);
-	// 
-	//cout << "vector.capacity : " << vector.capacity() << endl;
-
-	//vector.push_back(20);
-
-	//vector.push_back(30);
-
-	//vector.push_back(40);
-
-	//vector.push_back(50);
-
-	//cout << "vector.capacity : " << vector.capacity() << endl;
-
-	//for (int i = 0; i < vector.size(); i++)
-	//{
-	//	cout << vector[i] << " ";
-	//}
-	//
-	//cout << endl;
-
-	//// pop_back : Vector 컨테이너 뒤에 있는 데이터 값을 삭제합니다.
-	//vector.pop_back();
-	//vector.pop_back();
-	//vector.pop_back();
-
-	//cout << "vector.size : " << vector.size() << endl;
-	//cout << "vector.capacity : " << vector.capacity() << endl;
-
-#pragma endregion
-
-#pragma region Rhythm Game
-
-	vector<const char*> vector;
-	vector.reserve(100);
-
-	int i = 0;
-	int count = 10;
-	srand(time(NULL));
-	while (i < count)
+	while (stack.empty() == false)
 	{
-		int direction = rand() % 4;
-		switch (direction)
-		{
-		case 0: vector.push_back("↑");
-			break;
+		cout << "Stack의 Top : " << stack.top() << endl;
+		stack.pop();
+	}*/
 
-		case 1: vector.push_back("←");
-			break;
+#pragma endregion
 
-		case 2: vector.push_back("→");
-			break;
+#pragma region Queue(FIFO) 선입선출
 
-		case 3: vector.push_back("↓");
-			break;
+	/*queue<int> queue;
 
-		default:
-			break;
-		}
-		i++;
-	}
+	queue.push(10);
+	queue.push(20);
+	queue.push(30);
+	queue.push(40);
 
-	int life = 3;
-	while (1)
+	while (queue.size())
 	{
-		cout << "Life : ";
-		for (int i = 0; i < life; i++)
-		{
-			cout << "♥ ";
-		}
-		
-		cout << endl;
-		cout << endl;
-		for (int i = 0; i < vector.size(); i++)
-		{
-			cout << vector[i] << " ";
-		}
-		
-		char key = 0;
-
-		if (_kbhit())
-		{
-			key = _getch();
-			system("cls");
-
-			if (key == -32)
-			{
-				key = _getch();
-			}
-
-			switch (key)
-			{
-			case UP: if (vector[vector.size() - 1] == "↑") { vector.pop_back(); }
-				     else { life--; }
-				break;
-
-			case LEFT: if (vector[vector.size() - 1] == "←") { vector.pop_back(); }
-					   else { life--; }
-				break;
-
-			case RIGHT: if (vector[vector.size() - 1] == "→") { vector.pop_back(); }
-					    else { life--; }
-				break;
-
-			case DOWN: if (vector[vector.size() - 1] == "↓") { vector.pop_back(); }
-					   else { life--; }
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (life == 0)
-		{
-			cout << "GAME OVER" << endl;
-			break;
-		}
-
-		if (vector.size() == 0)
-		{
-			cout << "GAME CLEAR" << endl;
-			break;
-		}
-		Sleep(100);
-		system("cls");
-	}
+		cout << queue.front() << endl;
+		queue.pop();
+	}*/
 
 #pragma endregion
 
-
 #pragma endregion
 
-	
 	return 0;
 }
