@@ -11,7 +11,7 @@ int main()
 
 #pragma region Stack(LIFO) 선입후출
 
-	/*stack<int> stack;
+	/*std::stack<int> stack;
 
 	stack.push(10);
 	stack.push(20);
@@ -29,7 +29,7 @@ int main()
 
 #pragma region Queue(FIFO) 선입선출
 
-	/*queue<int> queue;
+	/*std::queue<int> queue;
 
 	queue.push(10);
 	queue.push(20);

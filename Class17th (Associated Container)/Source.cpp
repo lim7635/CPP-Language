@@ -7,7 +7,7 @@ int main()
 
 #pragma region List
 
-	//list<int> list;
+	//std::list<int> list;
 
 	//list.push_front(10);
 	//list.push_back(5);
@@ -32,7 +32,7 @@ int main()
 
 #pragma region Map
 
-	//map<const char*, int> map;
+	//std::map<const char*, int> map;
 
 	//// using namespace std;를 사용했을 경우 std:: 안 적어도 됨
 	//map.insert(std::make_pair("Sword", 10000));
@@ -60,7 +60,7 @@ int main()
 #pragma region Set
 
 	//// 오름차순으로 정렬됨
-	//set<int> set;
+	//std::set<int> set;
 
 	//set.insert(10);
 	//set.insert(20);

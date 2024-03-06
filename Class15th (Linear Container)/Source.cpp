@@ -159,7 +159,7 @@ int main()
 
 #pragma region Deque
 
-	//deque<int> deque;
+	//std::deque<int> deque;
 
 	//// push.front : 앞에 데이터 값을 넣어줍니다.
 	//deque.push_front(10);
