@@ -1,7 +1,16 @@
 ﻿#include <iostream>
 #include <stack>
 #include <queue>
+#include <string>
 using namespace std;
+
+struct cmp
+{
+	bool operator()(string s1, string s2)
+	{
+		return s1.length() > s2.length(); // 글자 길이가 짧은 것부터 오름차순으로 정렬
+	}
+};
 
 int main()
 {
@@ -41,6 +50,30 @@ int main()
 		cout << queue.front() << endl;
 		queue.pop();
 	}*/
+
+#pragma endregion
+
+#pragma region Priority Queue(우선순위 큐)
+	// 우선순위가 설계되어 있는 queue(내림차순이 default)
+	// 사용자가 직접 우선순위 조정 가능
+
+	// greater<int> : 오름차순 정렬, less<int> : 내림차순 정렬
+	priority_queue<string, vector<string>, cmp> pq;
+
+	int n = 3;
+
+	for (int i = 0; i < n; i++)
+	{
+		string x;
+		cin >> x;
+		pq.push(x);
+	}
+
+	while (pq.empty() == false)
+	{
+		cout << pq.top() << " ";
+		pq.pop();
+	}
 
 #pragma endregion
 
